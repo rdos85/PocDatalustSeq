@@ -9,8 +9,13 @@ POC usando Serilog + Seq para armazenamento e visualização de logs.
 
 ## Configurando Serilog
 ```csharp
-Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
+// Serilog configuration.
+Log.Logger = new LoggerConfiguration()
+                .ReadFrom
+                .Configuration(builder.Configuration)
+                .CreateLogger();
 builder.Logging.AddSerilog();
+builder.Host.UseSerilog();
 ```
 
 ## Configurando AppSettings
