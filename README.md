@@ -52,3 +52,5 @@ A porta 5341 é para ingestão dos logs (vide configuração anterior). <br>
 
 Feita a configuração, basta gravar os logs na aplicação que os mesmos poderão ser visualizados em:<br> 
 `http://localhost:80`
+
+![print do Seq](/img/sample-view.png)
