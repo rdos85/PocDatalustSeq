@@ -15,8 +15,14 @@ builder.Logging.AddSerilog();
 
 ## Configurando AppSettings
 ```jsonc
-"Serilog": {
-    "Using":  [ "Serilog.SInks.Seq" ],
+{
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Verbose",
+      "Override": {
+        "Microsoft": "Warning",
+      }
+    },
     "WriteTo": [
       {
         "Name": "Seq",
@@ -26,15 +32,17 @@ builder.Logging.AddSerilog();
       }
     ]
   }
+}
+
 ```
 
 ## Iniciando o Datalust Seq com Docker
 
-A porta 80 é para acesso à interface de consulta dos logs. 
-A porta 5341 é para ingestão dos logs (vide configuração anterior).
+A porta 80 é para acesso à interface de consulta dos logs. <br>
+A porta 5341 é para ingestão dos logs (vide configuração anterior). <br>
 `docker run -d -p 80:80 -p 5341:5341 -e ACCEPT_EULA=Y --name seq datalust/seq`
 
 # Utilização
 
-Feita a configuração, basta gravar os logs na aplicação que os mesmos poderão ser visualizados em: 
+Feita a configuração, basta gravar os logs na aplicação que os mesmos poderão ser visualizados em:<br> 
 `http://localhost:80`
