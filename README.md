@@ -5,6 +5,7 @@ POC usando Serilog + Seq para armazenamento e visualização de logs.
 
 ## Pacotes necessários
 `Serilog.AspNetCore`
+<br>
 `Serilog.Sinks.Seq`
 
 ## Configurando Serilog
